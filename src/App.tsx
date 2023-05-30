@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+// TypeScript Type
+let Name1: any;
+let name: number | string;
+let age: number;
+let isStudent: boolean;
+let hobbies: String[];
+let role: [number, string];
+
+// type Person= {
+//   name: string;
+//   age?: number;
+// };
+interface Person {
+  name: string;
+  age?: number;
+}
+
+interface Guy extends Person {
+  profession: string;
+}
+
+let person: Person = {
+  name: "John",
+};
+
+type X = {
+  a: string;
+  b: number;
+};
+type Y = X & {
+  a: string;
+  b: number;
+};
+
+// let y: Y = {
+//   c: "efdas",
+//   d: 42,
+// };
+
+let printName: (name: string) => never;
+// console.log(name);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div className="App">Hello world</div>;
 }
 
 export default App;
